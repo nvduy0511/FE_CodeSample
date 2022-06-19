@@ -4,14 +4,14 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { NavLink } from 'react-router-dom';
 import styles from './Sider.module.css'
 import companyLogo from '../../images/logo_transparent.png';
-import FaceTwoToneIcon from '@mui/icons-material/FaceTwoTone';
+import AdminPanelSettingsIcon from '@mui/icons-material/AdminPanelSettings';
 import ExitToAppIcon from '@mui/icons-material/ExitToApp';
 
 function Sider() {
 
     const [openLogout, setOpenLogout] = useState(false);
     const TkAdmin = JSON.parse(sessionStorage.getItem("Admin"));
-
+    const AdminName = JSON.parse(sessionStorage.getItem("AdminName"));
     const SideData = [
         {
             title: 'Quản lý bài lý thuyết',
@@ -66,8 +66,8 @@ function Sider() {
                 <div className={styles.account}>
                     <div className={styles.horizontal}></div>
                     <div className={styles.info} onClick={handleOpenLogout}>
-                        <FaceTwoToneIcon style={{ fontSize: "50px", textAlign: "center" }} />
-                        <span style={{ textAlign: "center", fontSize: '15px', fontWeight: 'bold', marginLeft: '5px' }}>{TkAdmin ?? "Không có tài khoản đăng nhập"}</span>
+                        <AdminPanelSettingsIcon style={{ fontSize: "50px", textAlign: "center" }} />
+                        <span style={{ textAlign: "center", fontSize: '15px', fontWeight: 'bold', marginLeft: '5px' }}>{TkAdmin && `Admin ${AdminName}`}</span>
                     </div>
                     <div className={styles.horizontal}></div>
                     {openLogout && <NavLink style={{ color: "black" }} className={styles.Logout} onClick={handleLogout} to={'/Admin'}>

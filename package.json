@@ -67,5 +67,8 @@
       "last 1 safari version"
     ]
   },
-  "homepage": "http://localhost:3000/"
+  "homepage": "http://localhost:3000/",
+  "devDependencies": {
+    "@ckeditor/ckeditor5-alignment": "^34.1.0"
+  }
 }

@@ -10,13 +10,11 @@ import Button from '@mui/material/Button';
 import { CKEditor } from '@ckeditor/ckeditor5-react';
 import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 
-
 const cx = classNames.bind(styles);
 
 
-
 function CreateLyThuyet() {
-
+    
     const navigate = useNavigate();
     let { IdMonHoc, TenMonHoc } = useParams();
     const [lyThuyet, setLyThuyet] = useState({
